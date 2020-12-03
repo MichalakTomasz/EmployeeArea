@@ -23,7 +23,7 @@ namespace EmployeeArea
 
         private DbContextOptions<EmployeeAreaDbContext> GetDbcontextOptions()
         {
-            var connectionString = @"Data Source=D:\Repos\EmploeeArea\EmployeeAreaDb.db";
+            var connectionString = @"Data Source=D:\Repos\EmployeeArea\EmployeeAreaDb.db";
             var dbContextBuilder = new DbContextOptionsBuilder<EmployeeAreaDbContext>();
             dbContextBuilder.UseSqlite(connectionString);
             dbContextBuilder.EnableSensitiveDataLogging(true);
