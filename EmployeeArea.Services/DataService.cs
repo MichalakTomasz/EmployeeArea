@@ -1,6 +1,8 @@
 ﻿using EmployeeArea.Models;
 using EmployeeArea.DataContext;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeArea.Services
 {
@@ -13,7 +15,7 @@ namespace EmployeeArea.Services
             _context = emploeeAreaDbContext;
         }
         public IEnumerable<Employee> GetEmployees()
-            => _context.Employees;
+            => _context.Employees.ToList();
 
         public void AddEmploee(Employee employee)
         {
@@ -21,16 +23,16 @@ namespace EmployeeArea.Services
             _context.SaveChanges();
         }
         public IEnumerable<JobRegistration> GetJobRegistrations()
-            => _context.JobRegistrations;
+            => _context.JobRegistrations.Include(j => j.Emploee).ToList();
 
         public void AddJobRegistration(JobRegistration jobRegistration)
         {
-            _context.Add(jobRegistration);
+            _context.Attach(jobRegistration);
             _context.SaveChanges();
         }
 
         public IEnumerable<Delegation> GetDelegations()
-            => _context.Delegations;
+            => _context.Delegations.Include(d => d.Employee).ToList();
 
         public void AddDelegation(Delegation delegation)
         {
@@ -39,7 +41,7 @@ namespace EmployeeArea.Services
         }
 
         public IEnumerable<AbsenceType> GetAbsenceTypes()
-            => _context.AbsenceTypes;
+            => _context.AbsenceTypes.ToList();
 
         public void AddAbsenceType(AbsenceType absenceType)
         {
@@ -48,7 +50,8 @@ namespace EmployeeArea.Services
         }
 
         public IEnumerable<Absence> GetAbsences()
-            => _context.Absences;
+            => _context.Absences.Include(a => a.Employee)
+            .Include(a => a.AbsenceType).ToList();
 
         public void AddAbsences(Absence absence)
         {

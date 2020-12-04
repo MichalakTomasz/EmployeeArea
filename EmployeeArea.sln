@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeArea", "EmployeeArea\EmployeeArea.csproj", "{57FAE00A-33D7-4615-A105-3ED52DDE6FFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeArea.DataContext", "EmployeeArea.DataContext\EmployeeArea.DataContext.csproj", "{62AE69B5-CEC5-4935-92E9-FC3255DBB1B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeArea.DataContext", "EmployeeArea.DataContext\EmployeeArea.DataContext.csproj", "{62AE69B5-CEC5-4935-92E9-FC3255DBB1B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeArea.Models", "EmployeeArea.Models\EmployeeArea.Models.csproj", "{E4B9AFB5-0116-4FE9-878F-7716F95786B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeArea.Models", "EmployeeArea.Models\EmployeeArea.Models.csproj", "{E4B9AFB5-0116-4FE9-878F-7716F95786B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeArea.Services", "EmployeeArea.Services\EmployeeArea.Services.csproj", "{8F1005C5-0F37-41E7-BBC0-7058CDAEC363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeArea.Services", "EmployeeArea.Services\EmployeeArea.Services.csproj", "{8F1005C5-0F37-41E7-BBC0-7058CDAEC363}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeArea.TimeSheets", "EmployeeArea.TimeSheets\EmployeeArea.TimeSheets.csproj", "{A3747B8C-AC83-4918-82F7-29B9C9E6FFC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesContent", "EmployeesContent\EmployeesContent.csproj", "{54D2211F-AC86-4434-8514-888F187F7187}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{8F1005C5-0F37-41E7-BBC0-7058CDAEC363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F1005C5-0F37-41E7-BBC0-7058CDAEC363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F1005C5-0F37-41E7-BBC0-7058CDAEC363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3747B8C-AC83-4918-82F7-29B9C9E6FFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3747B8C-AC83-4918-82F7-29B9C9E6FFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3747B8C-AC83-4918-82F7-29B9C9E6FFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3747B8C-AC83-4918-82F7-29B9C9E6FFC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D2211F-AC86-4434-8514-888F187F7187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D2211F-AC86-4434-8514-888F187F7187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D2211F-AC86-4434-8514-888F187F7187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D2211F-AC86-4434-8514-888F187F7187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

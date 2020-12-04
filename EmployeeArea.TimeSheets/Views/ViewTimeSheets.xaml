@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="EmployeeArea.TimeSheets.Views.ViewTimeSheets"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EmployeeArea.TimeSheets.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="timer" 
+                   HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Pracownik"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Employees}" SelectedItem="{Binding Employee}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FirstName}" Margin="5 0"/>
+                        <TextBlock Text="{Binding LastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding TimeSheet}"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Przyjście" Command="{Binding FromCommand}"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Wyjście" Command="{Binding ToCommand}"/>
+        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                  ItemsSource="{Binding TimeSheets}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nr pracownika" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding Employee.FirstName}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Employee.LastName}"/>
+                <DataGridTextColumn Header="Start" Binding="{Binding JobStart}"/>
+                <DataGridTextColumn Header="Koniec" Binding="{Binding JobEnd}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
