@@ -9,7 +9,8 @@ namespace EmployeArea.DelegationContent
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
-
+            var regionManager = containerProvider.Resolve<IRegionManager>();
+            regionManager.RegisterViewWithRegion("DelegationContent", typeof(ViewDelegationContent));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

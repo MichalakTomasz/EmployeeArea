@@ -7,4 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeArea.Models\EmployeeArea.Models.csproj" />
+    <ProjectReference Include="..\EmployeeArea.Services\EmployeeArea.Services.csproj" />
+  </ItemGroup>
 </Project>

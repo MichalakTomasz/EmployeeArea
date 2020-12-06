@@ -24,6 +24,9 @@
             <TabItem Header="Urlopy">
                 <ContentControl prism:RegionManager.RegionName="VacationContent"/>
             </TabItem>
+            <TabItem Header="Delegacje">
+                <ContentControl prism:RegionManager.RegionName="DelegationContent"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

@@ -27,7 +27,7 @@
         <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" IsReadOnly="True" 
                               ItemsSource="{Binding Employees}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Numer" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nr pracownika" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Imię" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Nazwisko" Binding="{Binding LastName}"/>
             </DataGrid.Columns>

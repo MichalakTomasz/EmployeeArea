@@ -17,6 +17,7 @@
     <PackageReference Include="Prism.Unity" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EmployeArea.DelegationContent\EmployeArea.DelegationContent.csproj" />
     <ProjectReference Include="..\EmployeeArea.Models\EmployeeArea.Models.csproj" />
     <ProjectReference Include="..\EmployeeArea.Services\EmployeeArea.Services.csproj" />
     <ProjectReference Include="..\EmployeeArea.DataContext\EmployeeArea.DataContext.csproj" />

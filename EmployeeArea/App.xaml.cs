@@ -12,6 +12,7 @@ using System.Linq;
 using EmployeeArea.Models;
 using System.Collections.Generic;
 using EmployeeArea.VacationContent;
+using EmployeArea.DelegationContent;
 
 namespace EmployeeArea
 {
@@ -43,6 +44,7 @@ namespace EmployeeArea
             moduleCatalog.AddModule<TimeSheetsModule>();
             moduleCatalog.AddModule<EmployeesContentModule>();
             moduleCatalog.AddModule<VacationContentModule>();
+            moduleCatalog.AddModule<DelegationContentModule>();
         }
         protected override void OnInitialized()
         {

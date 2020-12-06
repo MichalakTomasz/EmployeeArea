@@ -36,7 +36,7 @@ namespace EmployeeArea.Services
 
         public void AddDelegation(Delegation delegation)
         {
-            _context.Add(delegation);
+            _context.Attach(delegation);
             _context.SaveChanges();
         }
 
