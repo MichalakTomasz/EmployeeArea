@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmployeArea.DelegationContent\EmployeArea.DelegationContent.csproj" />
+    <ProjectReference Include="..\EmployeeArea.Events\EmployeeArea.Events.csproj" />
     <ProjectReference Include="..\EmployeeArea.Models\EmployeeArea.Models.csproj" />
     <ProjectReference Include="..\EmployeeArea.Services\EmployeeArea.Services.csproj" />
     <ProjectReference Include="..\EmployeeArea.DataContext\EmployeeArea.DataContext.csproj" />

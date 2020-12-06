@@ -1,6 +1,8 @@
-﻿using EmployeeArea.Models;
+﻿using EmployeeArea.Events;
+using EmployeeArea.Models;
 using EmployeeArea.Services;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -13,17 +15,26 @@ namespace EmployeeArea.VacationContent.ViewModels
     {
         private readonly IDataService _dataService;
 
-        public ViewVacationContentViewModel(IDataService dataService)
+        public ViewVacationContentViewModel(IDataService dataService, IEventAggregator eventAggregator)
         {
             _dataService = dataService;
-            var employees = _dataService.GetEmployees().Select(s => new EmployeeWrapper(s));
-            Employees = new ObservableCollection<EmployeeWrapper>(employees);
             var vacations = _dataService.GetAbsences().Select(s => new AbsenceWrapper(s));
             Vacations = new ObservableCollection<AbsenceWrapper>(vacations);
             AbsenceTypes = _dataService.GetAbsenceTypes();
             From = DateTime.Today;
             To = DateTime.Today;
+            eventAggregator.GetEvent<ChangeTabEvent>().Subscribe(OnTabChange);
         }
+
+        private void OnTabChange(string tabName)
+        {
+            if (tabName == "Urlopy")
+            {
+                var employees = _dataService.GetEmployees().Select(s => new EmployeeWrapper(s));
+                Employees = new ObservableCollection<EmployeeWrapper>(employees);
+            }
+        }
+
         private ObservableCollection<EmployeeWrapper> _employees;
         public ObservableCollection<EmployeeWrapper> Employees
         {

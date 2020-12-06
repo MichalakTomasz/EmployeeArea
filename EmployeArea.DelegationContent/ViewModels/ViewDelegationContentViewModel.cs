@@ -1,6 +1,8 @@
-﻿using EmployeeArea.Models;
+﻿using EmployeeArea.Events;
+using EmployeeArea.Models;
 using EmployeeArea.Services;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.ObjectModel;
@@ -12,14 +14,20 @@ namespace EmployeArea.DelegationContent.ViewModels
     {
         private readonly IDataService _dataService;
 
-        public ViewDelegationContentViewModel(IDataService dataService)
+        public ViewDelegationContentViewModel(IDataService dataService, IEventAggregator eventAggregator)
         {
             _dataService = dataService;
-            RefreshEmployees();
             var delegations = _dataService.GetDelegations().Select(s => new DelegationWrapper(s));
             Delegations = new ObservableCollection<DelegationWrapper>(delegations);
             From = DateTime.Today;
             To = DateTime.Today;
+            eventAggregator.GetEvent<ChangeTabEvent>().Subscribe(OnTabChanged);
+        }
+
+        private void OnTabChanged(string tabName)
+        {
+            if (tabName == "Delegacje") 
+                RefreshEmployees();
         }
 
         private void RefreshEmployees()

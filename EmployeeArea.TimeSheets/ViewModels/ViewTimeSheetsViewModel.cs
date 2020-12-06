@@ -1,6 +1,8 @@
-﻿using EmployeeArea.Models;
+﻿using EmployeeArea.Events;
+using EmployeeArea.Models;
 using EmployeeArea.Services;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.ObjectModel;
@@ -12,14 +14,23 @@ namespace EmployeeArea.TimeSheets.ViewModels
     {
         private readonly IDataService _dataService;
 
-        public ViewTimeSheetsViewModel(IDataService dataService)
+        public ViewTimeSheetsViewModel(IDataService dataService, IEventAggregator eventAggregator)
         {
             _dataService = dataService;
             var timeSheets = _dataService.GetJobRegistrations().Select(s => new JobRegistrationWrapper(s)).ToList();
             TimeSheets = new ObservableCollection<JobRegistrationWrapper>(timeSheets);
-            var employees = _dataService.GetEmployees().Select(s => new EmployeeWrapper(s)).ToList();
-            Employees = new ObservableCollection<EmployeeWrapper>(employees);
+            eventAggregator.GetEvent<ChangeTabEvent>().Subscribe(OnTabChanged);
         }
+
+        private void OnTabChanged(string tabName)
+        {
+            if (tabName == "Czas pracy")
+            {
+                var employees = _dataService.GetEmployees().Select(s => new EmployeeWrapper(s)).ToList();
+                Employees = new ObservableCollection<EmployeeWrapper>(employees);
+            }
+        }
+
         private ObservableCollection<EmployeeWrapper> _employees;
         public ObservableCollection<EmployeeWrapper> Employees
         {
