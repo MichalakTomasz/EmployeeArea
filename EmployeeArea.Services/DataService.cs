@@ -55,7 +55,7 @@ namespace EmployeeArea.Services
 
         public void AddAbsences(Absence absence)
         {
-            _context.Add(absence);
+            _context.Attach(absence);
             _context.SaveChanges();
         }
     }

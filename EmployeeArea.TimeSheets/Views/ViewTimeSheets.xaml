@@ -36,7 +36,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding TimeSheet}"/>
         <Button Grid.Row="3" Grid.Column="0" Content="Przyjście" Command="{Binding FromCommand}"/>
         <Button Grid.Row="3" Grid.Column="1" Content="Wyjście" Command="{Binding ToCommand}"/>
-        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  IsReadOnly="True"
                   ItemsSource="{Binding TimeSheets}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nr pracownika" Binding="{Binding Id}"/>

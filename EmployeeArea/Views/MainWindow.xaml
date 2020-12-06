@@ -21,6 +21,9 @@
             <TabItem Header="Czas pracy">
                 <ContentControl prism:RegionManager.RegionName="TimeSheetsContent"/>
             </TabItem>
+            <TabItem Header="Urlopy">
+                <ContentControl prism:RegionManager.RegionName="VacationContent"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

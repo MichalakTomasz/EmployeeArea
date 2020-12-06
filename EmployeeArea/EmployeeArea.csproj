@@ -21,6 +21,7 @@
     <ProjectReference Include="..\EmployeeArea.Services\EmployeeArea.Services.csproj" />
     <ProjectReference Include="..\EmployeeArea.DataContext\EmployeeArea.DataContext.csproj" />
     <ProjectReference Include="..\EmployeeArea.TimeSheets\EmployeeArea.TimeSheets.csproj" />
+    <ProjectReference Include="..\EmployeeArea.VacationContent\EmployeeArea.VacationContent.csproj" />
     <ProjectReference Include="..\EmployeesContent\EmployeesContent.csproj" />
   </ItemGroup>
 </Project>

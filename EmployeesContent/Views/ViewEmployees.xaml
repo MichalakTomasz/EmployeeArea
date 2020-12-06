@@ -24,7 +24,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Nazwisko:"/>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Dodaj" Command="{Binding AddEmployeeCommand}"/>
-        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" IsReadOnly="True" 
                               ItemsSource="{Binding Employees}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Numer" Binding="{Binding Id}"/>
