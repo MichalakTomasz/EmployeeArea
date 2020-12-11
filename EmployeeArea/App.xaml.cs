@@ -7,7 +7,6 @@ using System.Windows;
 using Prism.Modularity;
 using EmployeeArea.TimeSheets;
 using EmployeesContext;
-using System.Windows.Navigation;
 using System.Linq;
 using EmployeeArea.Models;
 using System.Collections.Generic;

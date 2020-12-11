@@ -17,14 +17,17 @@ namespace EmployeeArea.ViewModels
 
         private DelegateCommand<SelectionChangedEventArgs> _tabChangedEvent;
         public DelegateCommand<SelectionChangedEventArgs> TabChangedEvent =>
-            _tabChangedEvent ?? (_tabChangedEvent = new DelegateCommand<SelectionChangedEventArgs>(ExecuteTabChangedEvent));
+            _tabChangedEvent ?? (_tabChangedEvent = 
+            new DelegateCommand<SelectionChangedEventArgs>(ExecuteTabChangedEvent));
 
         void ExecuteTabChangedEvent(SelectionChangedEventArgs e)
         {
             var tabControl = e.OriginalSource as TabControl;
-            var tabName = (tabControl.SelectedItem as TabItem).Header.ToString();
-            _eventAggregator.GetEvent<ChangeTabEvent>().Publish(tabName);
-        }
-            
+            if (tabControl != null)
+            {
+                var tabName = (tabControl.SelectedItem as TabItem).Header.ToString();
+                _eventAggregator.GetEvent<ChangeTabEvent>().Publish(tabName);
+            }
+        }     
     }
 }
