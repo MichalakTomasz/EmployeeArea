@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Employee.Mobile.Views.PageVacation">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Dodaj Urlop"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <Label Text="Od:"/>
+            <DatePicker/>
+            <Label Text="Do:"/>
+            <DatePicker/>
+            <Label Text="Opis"/>
+            <Button Text="Zapisz"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

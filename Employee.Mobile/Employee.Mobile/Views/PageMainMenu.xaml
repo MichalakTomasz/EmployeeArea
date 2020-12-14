@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Employee.Mobile.Views.PageMainMenu">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Menu"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <Button Text="Czas Pracy"/>
+            <Button Text="Urlopy"/>
+            <Button Text="Delegacje"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

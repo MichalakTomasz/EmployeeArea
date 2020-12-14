@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Employee.Mobile.Views.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Rejestuj czas pracy"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"/>
+            <Button Text="Wejście"/>
+            <Button Text="Wyjsice"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
